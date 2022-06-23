@@ -1,0 +1,14 @@
+http
+{
+#test comment
+    server
+    {
+        location / image
+        {
+            files / data
+            {
+                root / check;
+            }
+        }
+    }
+}

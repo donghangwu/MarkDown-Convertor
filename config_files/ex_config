@@ -1,0 +1,25 @@
+port 8080; # port my server listens on
+
+location /echo EchoHandler { # no arguments
+}
+
+location /static StaticHandler {
+root ./static; # supports relative paths
+}
+
+location /api CrudHandler {
+data_path ./crud; 
+}
+
+location /health HealthHandler {
+}
+
+location /sleep SleepHandler {
+}
+
+location / StaticHandler {
+root ./static/angular-blog; # supports relative paths
+}
+
+location /markdown MarkDownHandler {
+}

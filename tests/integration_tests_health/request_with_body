@@ -1,0 +1,9 @@
+GET /health HTTP/1.1
+Accept-Encoding: gzip, deflate
+Content-Length: 5
+Content-Type: text/plain; charset=utf-8
+Host: localhost:8080
+Connection: Keep-Alive
+Cache-Control: no-cache
+
+hello

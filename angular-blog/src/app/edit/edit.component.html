@@ -1,0 +1,17 @@
+<div id="move-it-down">
+    <form action="" method="POST" id="edit">
+        <!-- <label for="edit-title">Title</label>
+        <input type="text" id="edit-title" name="title" [(ngModel)]="post.title" value="{{ post.title }}"> -->
+
+        <br>
+        <h2><label for="edit-body">Your markdown</label></h2>
+        <br>
+        <textarea type="text" id="edit-body" name="body" [(ngModel)]="post.content" rows="20" cols="60">
+            {{ post.content }}
+        </textarea>
+        <!-- <p *ngIf="post.postid != 0">Last Modfied: {{ post.modified | date:'medium' }}</p> -->
+    </form>
+    <button type="submit" form="edit" id="edit-save-button" (click)="savePost.emit(post)">Save</button>
+    <button type="submit" form="edit" id="edit-delete-button" (click)="deletePost.emit(post)">Delete</button>
+    <button type="submit" form="edit" id="edit-preview-button" (click)="previewPost.emit(post)">Preview</button>
+</div>

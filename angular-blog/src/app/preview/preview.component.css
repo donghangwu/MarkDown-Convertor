@@ -1,0 +1,17 @@
+#move-it-down-and-right{
+    position: absolute;
+    top: 200px;
+    /* left: 55%; */
+    height: 60%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    scrollbar-width: thick;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#preview-edit-button{
+    position: absolute;
+    bottom: 5%;
+    left: 20%;
+}

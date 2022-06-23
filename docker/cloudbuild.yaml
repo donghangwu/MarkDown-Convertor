@@ -1,0 +1,34 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    docker pull gcr.io/$PROJECT_ID/snore:base || exit 0
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+    'build',
+    '-f', 'docker/base.Dockerfile',
+    '-t', 'snore:base',
+    '-t', 'gcr.io/$PROJECT_ID/snore:base',
+    '--cache-from', 'gcr.io/$PROJECT_ID/snore:base',
+    '.'
+  ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/snore:base']
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: [
+#     'build',
+#     '-f', 'docker/coverage.Dockerfile',
+#     '-t', 'gcr.io/$PROJECT_ID/snore:latest',
+#     '.'
+#   ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+    'build',
+    '-f', 'docker/Dockerfile',
+    '-t', 'gcr.io/$PROJECT_ID/snore:latest',
+    '.'
+  ]
+images: ['gcr.io/$PROJECT_ID/snore:base', 'gcr.io/$PROJECT_ID/snore:latest']
+timeout: 3600s

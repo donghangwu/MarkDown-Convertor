@@ -1,0 +1,7 @@
+server
+{
+    location /
+    {
+        root / data / www;
+    }
+}

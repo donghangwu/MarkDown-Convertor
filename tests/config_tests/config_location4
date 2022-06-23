@@ -1,0 +1,5 @@
+location / image /
+{
+    "asd\'ad";
+    root../ data / "folder1";
+}
